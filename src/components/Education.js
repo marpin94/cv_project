@@ -9,11 +9,13 @@ export const Education = () => {
             <div class="form-group">
                 <label for="formGroupExampleInput">School</label>
                 <input type="text" class="form-control" id="formGroupExampleInput" placeholder="..." />
+                <button>Edit</button>
             </div>
 
             <div class="form-group">
                 <label for="formGroupExampleInput2">Degree</label>
                 <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="..." />
+                <button>Edit</button>
              </div>
             </form>
         </div>
