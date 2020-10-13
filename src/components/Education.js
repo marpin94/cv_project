@@ -1,23 +1,71 @@
-import React from 'react'
+import React, { useState } from 'react'
+
+const EducationComplete = (props) => {
+    return(
+    <div className='card'>
+        <div className='card-body'>
+            <h3>Education</h3>
+            <p>School: {props.school}</p>
+            <p>Degree: {props.degree}</p>
+        </div>
+        <button className='btn btn-primary btn-lg btn-block' onClick={props.handleClickAlt}>Edit</button>
+    </div>
+    )}
 
 export const Education = () => {
-    return (
+    const [school, setSchool] = useState('')
+    const [degree, setDegree] = useState('')
+    const [save, setSave] = useState(false)
+
+    const handleChangeSchool = (e) => {
+        setSchool(e.target.value)
+    }
+
+    const handleChangeDegree = (e) => {
+        setDegree(e.target.value)
+    }
+
+    const handleSubmit = (e) =>{
+        e.preventDefault()
+        setSave(!save)
+    }
+
+    const handleClickAlt = () => {
+        setSave(false)
+    }
+
+    if(save===false) {return (
         <div>
             <h3>Education</h3>
             
-            <form className='card'>
-            <div class="form-group">
-                <label for="formGroupExampleInput">School</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="..." />
-                <button>Edit</button>
+            <form className='card' onSubmit={handleSubmit}>
+            <div className="form-group">
+                <label htmlFor="formGroupExampleInput">School</label>
+                <input 
+                type="text" 
+                className="form-control" 
+                id="formGroupExampleInput" 
+                placeholder="..." 
+                value = {school}
+                onChange={handleChangeSchool}/>
             </div>
 
-            <div class="form-group">
-                <label for="formGroupExampleInput2">Degree</label>
-                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="..." />
-                <button>Edit</button>
-             </div>
+            <div className="form-group">
+                <label htmlFor="formGroupExampleInput2">Degree</label>
+                <input 
+                type="text" 
+                className="form-control" 
+                id="formGroupExampleInput2" 
+                placeholder="..." 
+                value={degree}
+                onChange={handleChangeDegree}/>
+            </div>
+            <button className='btn btn-primary btn-lg'>Save</button>
             </form>
         </div>
-    )
+        )}{return(
+                <EducationComplete school={school} degree={degree} handleClickAlt={handleClickAlt} setSave={setSave} />
+            )
+        }
+    
 }
