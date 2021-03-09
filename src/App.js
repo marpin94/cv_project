@@ -10,7 +10,7 @@ import { Resume } from './components/Resume';
 function App() {
   return (
 
-      <div className='container'>
+      <div className='container mt-2'>
           <Profile />
           <Education />
           <Experience />

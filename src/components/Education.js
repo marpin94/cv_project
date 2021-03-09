@@ -8,7 +8,7 @@ const EducationComplete = (props) => {
             <p>School: {props.school}</p>
             <p>Degree: {props.degree}</p>
         </div>
-        <button className='btn btn-primary btn-lg btn-block' onClick={props.handleClickAlt}>Edit</button>
+        <button className='btn' onClick={props.handleClickAlt}>Edit</button>
     </div>
     )}
 
@@ -35,7 +35,7 @@ export const Education = () => {
     }
 
     if(save===false) {return (
-        <div>
+        <div className='mt-3'>
             <h3>Education</h3>
             
             <form className='card' onSubmit={handleSubmit}>
@@ -60,7 +60,7 @@ export const Education = () => {
                 value={degree}
                 onChange={handleChangeDegree}/>
             </div>
-            <button className='btn btn-primary btn-lg'>Save</button>
+            <button className='btn'>Save</button>
             </form>
         </div>
         )}{return(

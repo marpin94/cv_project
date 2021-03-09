@@ -8,7 +8,7 @@ const ProfileComplete = (props) => {
             <p>Email: {props.email}</p>
             <p>Phone: {props.profession}</p>
         </div>
-        <button className='btn btn-primary btn-lg btn-block' onClick={props.handleClickAlt} >Edit</button>
+        <button className='btn' onClick={props.handleClickAlt} >Edit</button>
     </div>
     )}
 
@@ -74,7 +74,7 @@ export const Profile = () => {
             onChange={handleChangeProf} 
             placeholder="..." />
         </div>
-        <button className='btn btn-primary btn-lg' onClick={handleSubmit}>Save</button>
+        <button className='btn' onClick={handleSubmit}>Save</button>
         </form>
         </div>
     )}{return(

@@ -8,7 +8,7 @@ const ExperienceComplete = (props) => {
             <p>Company: {props.company}</p>
             <p>Title: {props.title}</p>
         </div>
-        <button className='btn btn-primary btn-lg btn-block' onClick={props.handleClickAlt}>Edit</button>
+        <button className='btn' onClick={props.handleClickAlt}>Edit</button>
     </div>
     )}
 
@@ -35,7 +35,7 @@ export const Experience = () => {
     }
 
     if(save===false) {return (
-        <div>
+        <div className='mt-3'>
             <h3>Experience</h3>
             
             <form className='card' onSubmit={handleSubmit}>
@@ -60,7 +60,7 @@ export const Experience = () => {
                 value={title}
                 onChange={handleChangeTitle}/>
             </div>
-            <button className='btn btn-primary btn-lg'>Save</button>
+            <button className='btn'>Save</button>
             </form>
         </div>
         )}{return(
